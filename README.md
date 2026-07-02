@@ -1,8 +1,8 @@
-# 2026.06.22_Capston Degine
+## 2026.06.22_Capston Degine
 
 ---
 
-### 🧤 Cross-Feedback Haptic Glove
+# 🧤 Cross-Feedback Haptic Glove
 
 원격 조작 및 디지털 트윈 환경을 위한 고정밀 양방향 촉각 피드백 시스템 
 - 팀명: AIM (최승범, 이승우, 설재훈, 이민권)  
@@ -22,11 +22,15 @@
 
 총 6-DOF의 다관절 추적 프레임과 정밀 손가락 기구부를 설계하여 3D 프린팅으로 자체 제작
 
-외골격 이미지
+![Hardware_Exoskeleton](https://github.com/seoljaehun/2026.06.22_Capstone_Design/blob/main/Docs/Image/Hardware_Exoskeleton.png)
+
+![Axis1 Gear](https://github.com/seoljaehun/2026.06.22_Capstone_Design/blob/main/Docs/Image/Axis1%20Gear.png)
+![Axis2, 3 Gear](https://github.com/seoljaehun/2026.06.22_Capstone_Design/blob/main/Docs/Image/Axis2-3%20Gear.png)
 
 - **6-DOF Tracking Frame**: Base, Axis 2, Axis 3 모터와 끝단의 3축 짐벌(Gimbal Wrist) 구조를 결합하여 손목의 미세한 위치 및 회전을 추적
 
-손가락 이미지
+![Hardware_Finger_1](https://github.com/seoljaehun/2026.06.22_Capstone_Design/blob/main/Docs/Image/Hardware_Finger_1.png)
+![Hardware_Finger_2](https://github.com/seoljaehun/2026.06.22_Capstone_Design/blob/main/Docs/Image/Hardware_Finger_2.png)
 
 - **Finger Mechanism**: 검지, 중지, 엄지에 대응하는 기구부로, 2축 굽힘 운동을 위한 9-Link Mechanism과 미세한 측면 벌어짐을 측정하는 Base Splay Link(1-DOF)로 구성
 
@@ -41,22 +45,27 @@
 
 사용자가 기구부의 무게나 모터의 저항을 느끼지 못하도록 제어 알고리즘을 적용
 
-보상 이미지 및 영상 링크?
+![Gravity Compensation](https://github.com/seoljaehun/2026.06.22_Capstone_Design/blob/main/Docs/Image/Gravity%20Compensation.PNG)
 
 - **중력 보상**: 시스템 동역학 방정식을 기반으로, 특정 링크에 작용하는 중력 벡터를 실시간으로 계산해 피드포워드로 상쇄 토크를 인가
+
+![Friction Compensation](https://github.com/seoljaehun/2026.06.22_Capstone_Design/blob/main/Docs/Image/Friction%20Compensation.PNG)
+
 - **마찰 보상**: 운동 방향을 추정하여 기어박스의 정지 및 이동 마찰력을 80% 비율로 보상해 시스템 투명성을 높임
 
 **#2. 실시간 Motion Tracking 및 기구학 해석**
 
-모션 트래킹 이미지 영상 링크
+![Exoskeleton_Motion Tracking](https://github.com/seoljaehun/2026.06.22_Capstone_Design/blob/main/Docs/Image/Exoskeleton_Motion%20Tracking.PNG)
 
 - **정기구학 (Forward Kinematics)**: 링크 길이(250mm)와 각 관절의 각도를 연산하여 손가락 끝점의 3차원 절대 좌표를 실시간으로 도출
+
+![Finger_Motion Tracking](https://github.com/seoljaehun/2026.06.22_Capstone_Design/blob/main/Docs/Image/Finger_Motion%20Tracking.PNG)
 
 - **정규화 매핑**: 엔코더 센서의 raw 데이터를 0~1 비율로 정규화하여 가상 손가락의 굽힘(Curl) 수치로 완벽하게 맵핑
 
 **#3. 물리적 반력 제어 (Force Feedback)**
 
-포스 피드백 이미지 및 영상
+![Exoskeleton_Force Feedback](https://github.com/seoljaehun/2026.06.22_Capstone_Design/blob/main/Docs/Image/Exoskeleton_Force%20Feedback.PNG)
 
 - **가상 침투 깊이 연산**: Unity 환경 내에서 손가락 끝점과 가상 객체 간의 충돌을 감지하고, 표면을 뚫고 들어간 '침투 깊이'를 실시간으로 추적
 - **Jacobian 기반 토크 맵핑**: 침투 깊이와 객체의 강성(Stiffness) 계수를 바탕으로 계산된 3차원 힘 벡터($F_x, F_y, F_z$)를 자코비안 행렬($J^T$)을 이용해 각 모터의 역방향 관절 토크로 변환 및 출력
@@ -69,7 +78,7 @@
 
 # 🚀 Future Work
 
-이미지
+![Final_Hardware](https://github.com/seoljaehun/2026.06.22_Capstone_Design/blob/main/Docs/Image/Final_Hardware.PNG)
 
 - **실물 로봇 연동**: 가상 시뮬레이션을 넘어, 실제 다관절 산업용 로봇 팔과의 양방향 물리적 제어 및 동기화 환경을 구축할 계획
 - **AI 기반 충돌 예측 모델**: 사용자의 움직임 궤적 데이터를 딥러닝으로 학습하여, 충돌을 사전에 예측하고 대비하는 AI 모델 도입을 구상 중에 있음
