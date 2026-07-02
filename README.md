@@ -53,15 +53,25 @@
 
 - **마찰 보상**: 운동 방향을 추정하여 기어박스의 정지 및 이동 마찰력을 80% 비율로 보상해 시스템 투명성을 높임
 
+[ https://drive.google.com/file/d/1x-Lz4MTiONSaEJykd6JzzbnzPlDL91jv/view?usp=sharing ]
+
 **#2. 실시간 Motion Tracking 및 기구학 해석**
 
 ![Exoskeleton_Motion Tracking](https://github.com/seoljaehun/2026.06.22_Capstone_Design/blob/main/Docs/Image/Exoskeleton_Motion%20Tracking.PNG)
 
 - **정기구학 (Forward Kinematics)**: 링크 길이(250mm)와 각 관절의 각도를 연산하여 손가락 끝점의 3차원 절대 좌표를 실시간으로 도출
 
+[ https://drive.google.com/file/d/1qj1lQaqc14D-1eWfy3dTiHRohoCGfiwj/view?usp=sharing ]
+
+[ https://drive.google.com/file/d/15SQRel_5A-sb6jxLStYEAN09orDJKoBw/view?usp=sharing ]
+
 ![Finger_Motion Tracking](https://github.com/seoljaehun/2026.06.22_Capstone_Design/blob/main/Docs/Image/Finger_Motion%20Tracking.PNG)
 
 - **정규화 매핑**: 엔코더 센서의 raw 데이터를 0~1 비율로 정규화하여 가상 손가락의 굽힘(Curl) 수치로 완벽하게 맵핑
+
+[ https://drive.google.com/file/d/1RPwCBb2-ctyh7ZDKhv3_87NWwyNwreAw/view?usp=sharing ]
+
+[ https://drive.google.com/file/d/1Bs6ixnb0EOAagmnX2_hkqc2qZl57GKjI/view?usp=sharing ]
 
 **#3. 물리적 반력 제어 (Force Feedback)**
 
@@ -69,6 +79,18 @@
 
 - **가상 침투 깊이 연산**: Unity 환경 내에서 손가락 끝점과 가상 객체 간의 충돌을 감지하고, 표면을 뚫고 들어간 '침투 깊이'를 실시간으로 추적
 - **Jacobian 기반 토크 맵핑**: 침투 깊이와 객체의 강성(Stiffness) 계수를 바탕으로 계산된 3차원 힘 벡터($F_x, F_y, F_z$)를 자코비안 행렬($J^T$)을 이용해 각 모터의 역방향 관절 토크로 변환 및 출력
+
+[ https://drive.google.com/file/d/1igh2boXZCQRC_Fgk3p846dIv5pikkLu7/view?usp=sharing ]
+
+[ https://drive.google.com/file/d/1fIxESatpOFsSkA-UGyZCKZ7Otv7NtTwW/view?usp=sharing ]
+
+[ https://drive.google.com/file/d/1ynp35kj1Q_Nx75Aqhy7c6Xc2Nchl-2s6/view?usp=sharing ]
+
+[ https://drive.google.com/file/d/16-4rRr4cdbPdCc31YRxrtIfJoeDOTB2A/view?usp=sharing ]
+
+[ https://drive.google.com/file/d/1gdaaGaKoBXvRHLQNCq3nRV43FlejvNWe/view?usp=sharing ]
+
+---
 
 # 🛠️ Troubleshooting & Limitations
 
@@ -82,3 +104,5 @@
 
 - **실물 로봇 연동**: 가상 시뮬레이션을 넘어, 실제 다관절 산업용 로봇 팔과의 양방향 물리적 제어 및 동기화 환경을 구축할 계획
 - **AI 기반 충돌 예측 모델**: 사용자의 움직임 궤적 데이터를 딥러닝으로 학습하여, 충돌을 사전에 예측하고 대비하는 AI 모델 도입을 구상 중에 있음
+
+---
